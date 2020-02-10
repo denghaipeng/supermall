@@ -156,7 +156,9 @@ export default {
 
       // 将商品添加到购物车
       // this.$store.commit("addCart", product);
-      this.$store.dispatch("addCart", product);
+      this.$store.dispatch("addCart", product).then(res => {
+        this.$toast.show(res, 2000);
+      });
     }
   }
 };
